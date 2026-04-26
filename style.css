@@ -1,0 +1,33 @@
+body{
+    background-image: url("image.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+ .menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.menu button {
+  display: block;
+  margin: 10px auto;
+  padding: 12px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: yellowgreen;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu button:hover {
+  background-color: rgb(11, 133, 11);
+  color: white;
+}
+
+}
+

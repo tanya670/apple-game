@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>start Game</title>
+    <style> 
+    body{
+    background-image: url("new 1.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+#startBtn {
+   border-radius: 10%;
+   height: 80px;
+   width: 200px;
+   position: absolute;
+   top: 10%;
+   border-color: rgb(2, 23, 2);
+   border-radius: 30%;
+   left: -640%;
+   right: 0%;
+   color: black;
+   font-size: 50px;
+   background-color: rgba(40, 172, 17, 0.853);
+}
+ 
+button:hover{
+    cursor: pointer;
+    background-color: rgb(6, 119, 10);
+}
+.menu {
+  position: absolute;
+  top: 80%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.menu button {
+  display: block;
+  margin: 10px auto;
+  padding: 12px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  background-color: rgba(173, 162, 40, 0.841);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu button:hover {
+  background-color: rgb(190, 193, 13);
+  color: white;
+}
+
+</style>
+</head>
+<body>
+    <div class="menu">
+
+<h2>SELECT BACKGROUND</h2>
+
+<button onclick="setBg('garden.jpg')">Sunny Garden🌄</button>
+<button onclick="setBg('night.jpg')">Moonlit Orchard🌙</button>
+<button onclick="setBg('appletree.jpg')">Apple Orchard 🌳</button>
+<br><br>
+    <button id="startBtn">PLAY</button>
+    </div>
+<button onclick="playMusic()"></button>
+
+<audio id="bgMusic">
+  <source src="gmusic.mp3" type="audio/mpeg">
+</audio>
+<audio id="appleSound">
+  <source src="catch.mp3" type="audio/mpeg">
+</audio>
+<script>
+function playMusic() {
+  document.getElementById("bgMusic").play();
+}
+function setBg(bg) {
+  localStorage.setItem("bg", bg);
+}
+</script>
+    <div class="hp">
+
+</div> 
+    <script>
+        document.getElementById("startBtn").addEventListener("click", function () {
+  if (!localStorage.getItem("bg")) {
+    alert("Pehle background select karo!");
+    return;
+  }
+
+  window.location.href ="index.html";
+});
+
+    </script>
+
+</body>
+</html>
