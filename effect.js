@@ -4,6 +4,13 @@
 
     const ctx = canvas.getContext('2d');
     let basketX = 400;
+    function moveLeft() {
+  if (basketX > -20) basketX -= 30;
+}
+
+function moveRight() {
+  if (basketX < 1300) basketX += 30;
+}
     let X = Math.random() * 1010;
     let Y = 0;
     let score = 0;
@@ -99,6 +106,10 @@ if (Y > 850) {
     });
     appleImage.onload = function() {
             draw();
+            // tumhara purana code (falling apples etc.)
+// TOP
+
+
     
 }
 ;

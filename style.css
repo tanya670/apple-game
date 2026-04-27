@@ -28,6 +28,18 @@ body{
   background-color: rgb(11, 133, 11);
   color: white;
 }
+#controls {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+}
 
+#controls button {
+  font-size: 25px;
+  padding: 10px 20px;
+  margin: 5px;
+}
 }
 

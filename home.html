@@ -8,11 +8,20 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
   <audio id="bgMusic" autoplay loop>
 
   <source src="gmusic.mp3" type="audio/mpeg"></audio>
   <canvas id="canvas"  height="700" width="1510"></canvas>
-     <script src="effect.js"></script>
+
+  <!-- tumhara game content (basket, apples etc.) -->
+
+  <div id="controls">
+    <button onclick="moveLeft()">⬅️</button>
+    <button onclick="moveRight()">➡️</button>
+  </div>
+
+  <script src="effect.js"></script>
 </body>
 </html>
