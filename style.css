@@ -34,12 +34,16 @@ body{
   width: 100%;
   text-align: center;
   z-index: 1000;
+
+
 }
 
 #controls button {
   font-size: 25px;
   padding: 10px 20px;
   margin: 5px;
+  background-color: rgba(207, 238, 9, 0.53);
+  border-color: rgb(2, 23, 2);
 }
 }
 
