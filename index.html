@@ -62,10 +62,13 @@ button:hover{
     <div class="menu">
 
 <h2>SELECT BACKGROUND</h2>
+<button onclick="toggleMenu()">🎨 Select Background</button>
 
-<button onclick="setBg('garden.jpg')">Sunny Garden🌄</button>
-<button onclick="setBg('night.jpg')">Moonlit Orchard🌙</button>
-<button onclick="setBg('appletree.jpg')">Apple Orchard 🌳</button>
+<div id="bgMenu" style="display:none;">
+  <button onclick="setBg('garden.jpg')">Sunny Garden🌄</button>
+  <button onclick="setBg('night.jpg')">Moonlit Orchard🌙</button>
+  <button onclick="setBg('appletree.jpg')">Apple Orchard 🌳</button>
+</div>
 <br><br>
     <button id="startBtn">PLAY</button>
     </div>
@@ -77,12 +80,18 @@ button:hover{
 <audio id="appleSound">
   <source src="catch.mp3" type="audio/mpeg">
 </audio>
+<button id="leftBtn">⬅️</button>
+<button id="rightBtn">➡️</button>
 <script>
 function playMusic() {
   document.getElementById("bgMusic").play();
 }
 function setBg(bg) {
   localStorage.setItem("bg", bg);
+}
+function toggleMenu() {
+  let menu = document.getElementById("bgMenu");
+  menu.style.display = menu.style.display === "none" ? "block" : "none";
 }
 </script>
     <div class="hp">
@@ -91,7 +100,7 @@ function setBg(bg) {
     <script>
         document.getElementById("startBtn").addEventListener("click", function () {
   if (!localStorage.getItem("bg")) {
-    alert("Pehle background select karo!");
+    alert("select background first");
     return;
   }
 
