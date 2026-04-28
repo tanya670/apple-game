@@ -40,6 +40,7 @@ bgImage.src = localStorage.getItem("bg") || "default.jpg";
         ctx.fillRect( basketX, 500, 120, 100);
         drawImage();
         Y += 4;
+    
 
        if (Y > 350 && X> basketX && X < basketX + 300) {
           score++
