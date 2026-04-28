@@ -14,6 +14,7 @@ function moveRight() {
     let X = Math.random() * 1010;
     let Y = 0;
     let score = 0;
+    let highScore = localStorage.getItem("highScore") || 0;
     let level =1;
     let gameOver = false;
     let fruits = ['apple'];
@@ -42,7 +43,10 @@ bgImage.src = localStorage.getItem("bg") || "default.jpg";
 
        if (Y > 350 && X> basketX && X < basketX + 300) {
           score++
-
+if (score > highScore) {
+  highScore = score;
+  localStorage.setItem("highScore", highScore);
+}
 console.log("Score:", score);
 if (level === 1 && score >= 10) {
   level = 2;
@@ -79,6 +83,7 @@ if (Y > 850) {
         ctx.font = '30px Arial';
         ctx.fillStyle='black';
         ctx.fillText(`Score: ${score}`, 70, 40);
+        ctx.fillText(`High Score: ${highScore}`, 70, 80);
         requestAnimationFrame(draw);
       } else {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -89,6 +94,7 @@ if (Y > 850) {
         ctx.fillText('Game Over!', canvas.width / 2, canvas.height / 2);
         ctx.font = '24px Arial';
         ctx.fillText(`Score: ${score}`, canvas.width / 2, canvas.height / 2+50);
+        ctx.fillText(`High Score: ${highScore}`, canvas.width / 2, canvas.height / 2+90);
       }
     }
     document.addEventListener('keydown', (e) => {
